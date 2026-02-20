@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPN Lanka Nexus - Buy or Sell Property Fast in Sri Lanka</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylemac.css">
+  <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="container header-top">
+      <div class="logo-section">
+        <div class="logo">
+          <div class="site-name">
+            <span class="brand-name">LPN Lanka Nexus</span>
+            <span class="tagline">Find • Buy • Sell Properties in Sri Lanka</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-section">
+        <div class="phone-number">
+          <i class="fa-solid fa-phone"></i>
+          <span>+94 71 123 4567</span>
+        </div>
+        <a href="https://wa.me/94711234567" class="whatsapp-top" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Now</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <!-- Logo -->
+        <div class="logo-container">
+          <a href="indexmac.html" class="logo-link">
+            <img src="img/logo.png" alt="LPN Lanka" class="logo">
+          </a>
+        </div>
+        <!-- Desktop Menu -->
+        <div class="desktop-menu">
+          <a href="indexmac.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="#" class="nav-link">Testimonials</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <div class="mobile-dropdown">
+            <button class="btn-primary full" onclick="togglePropertyMenu(event)">
+              View Properties ▾
+            </button>
+            <div id="propertyDropdown" class="dropdown-menu">
+              <a href="rental.html" class="mobile-link">Rental</a>
+              <a href="indexmac.html#sale" class="mobile-link">Sale</a>
+              <a href="indexmac.html#compare" class="mobile-link">Compare</a>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="mobile-btn" onclick="toggleMainNav()">
+          <svg id="menu-open-icon" class="icon" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-close-icon" class="icon hidden" viewBox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <nav class="main-nav">
+      <div class="container nav-wrapper">
+        <button class="main-nav-toggle" id="mainNavToggle" onclick="toggleMainNav()" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars" id="mainNavIcon"></i>
+        </button>
+        <a href="indexmac.html" class="nav-item home-btn"><i class="fa-solid fa-house"></i></a>
+        <a href="rental.html" class="nav-item">Rental</a>
+        <span class="nav-separator">|</span>
+        <a href="indexmac.html#sale" class="nav-item">Sales</a>
+        <span class="nav-separator">|</span>
+        <a href="services.html#construction" class="nav-item">Construction</a>
+        <div class="search-nav">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+      <div class="main-nav-panel" id="mainNavPanel">
+        <div class="main-nav-panel-inner">
+          <a href="indexmac.html" class="panel-nav-link active">Home</a>
+          <a href="about.html" class="panel-nav-link">About</a>
+          <a href="services.html" class="panel-nav-link">Services</a>
+          <a href="#" class="panel-nav-link">Testimonials</a>
+          <a href="contact.html" class="panel-nav-link">Contact</a>
+          <div class="panel-dropdown">
+            <button class="panel-view-btn" onclick="togglePropertyMenu(event)">
+              <i class="fa-solid fa-building"></i> View Properties <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="panelPropertyDropdown" class="panel-dropdown-menu">
+              <a href="rental.html"><i class="fa-solid fa-key"></i> Rental</a>
+              <a href="indexmac.html#sale"><i class="fa-solid fa-tag"></i> Sale</a>
+              <a href="indexmac.html#compare"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="bg-slider">
+      <div class="slide s1 active"></div>
+      <div class="slide s2"></div>
+      <div class="slide s3"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Buy or Sell Property<br>Fast in Sri Lanka</h1>
+      <p class="hero-subtext">Lands • Houses • Commercial • Rentals</p>
+
+      <div class="search-box">
+        <div class="search-fields">
+          <div class="select-field">
+            <span class="field-label">Location</span>
+            <select>
+              <option>Location</option>
+              <option>Colombo</option>
+              <option>Jaffna</option>
+              <option>Kilinochchi</option>
+            </select>
+          </div>
+          <div class="field-divider"></div>
+          <div class="select-field">
+            <span class="field-label">Budget</span>
+            <select>
+              <option>Budget</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+          <div class="field-divider"></div>
+          <div class="select-field">
+            <span class="field-label">Property Type</span>
+            <select>
+              <option>Type</option>
+              <option>House</option>
+              <option>Land</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <button class="cta-btn btn-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Search Property
+        </button>
+        <button class="cta-btn btn-post" onclick="openPostModal()">
+          <i class="fas fa-bullhorn"></i>
+          Post Property<br><span>FREE</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Soft Light Effects -->
+    <div class="light l1"></div>
+    <div class="light l2"></div>
+
+  </section>
+
+  <!-- Sell Section -->
+  <section class="sell-cta-section container">
+    <div class="sell-card">
+      <div class="sell-text">
+        <h2>Have a land or house to sell?</h2>
+        <p>We bring genuine buyers within days.</p>
+        <a href="#" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          WhatsApp us now
+        </a>
+      </div>
+      <div class="sell-image">
+        <img src="img/ser1.jpg" alt="House">
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Properties -->
+  <section id="properties" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mobile-scroll-row" id="proper12">
+
+        <!-- Property Card 1 -->
+        <div class="property-card">
+          <div class="property-img">
+            <span class="property-badge">Featured</span>
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="Modern Luxury Villa">
+          </div>
+          <div class="property-info">
+            <span class="property-type">House & Land Sale</span>
+            <h3 class="property-title">Modern Luxury Villa</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Beverly Hills, CA</span>
+            </div>
+            <div class="price">$2,500,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>5 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>4 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>4,500 sqft</span></div>
+            </div>
+            <a href="rental.html" class="property-btn" target="_blank">View Details</a>
+          </div>
+        </div>
+
+        <!-- Property Card 2 -->
+        <div class="property-card">
+          <div class="property-img">
+            <span class="property-badge">Featured</span>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6191dae10c" alt="Beachfront Mansion">
+          </div>
+          <div class="property-info">
+            <span class="property-type">Land Sale</span>
+            <h3 class="property-title">Modern Luxury Villa</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Beverly Hills, CA</span>
+            </div>
+            <div class="price">$2,500,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>5 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>4 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>4,500 sqft</span></div>
+            </div>
+            <a href="rental.html" class="property-btn" target="_blank">View Details</a>
+          </div>
+        </div>
+
+        <!-- Property Card 3 -->
+        <div class="property-card">
+          <div class="property-img">
+            <span class="property-badge">Featured</span>
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d" alt="Hilltop Retreat">
+          </div>
+          <div class="property-info">
+            <span class="property-type">Luxury House</span>
+            <h3 class="property-title">Modern Luxury Villa</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Beverly Hills, CA</span>
+            </div>
+            <div class="price">$2,500,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>5 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>4 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>4,500 sqft</span></div>
+            </div>
+            <a href="rental.html" class="property-btn" target="_blank">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <button class="btn-primary">View All Properties</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <div class="container">
+
+      <div class="section-title">
+      </div>
+
+      <!-- ================= RENTAL SECTION ================= -->
+      <h3 id="rental" class="sub-heading">Rental Properties</h3>
+      <div class="properties-grid mobile-scroll-row">
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+
+          <div class="property-info">
+            <span class="property-type">House Rental</span>
+            <h3 class="property-title">City View Apartment</h3>
+
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Downtown, Colombo</span>
+            </div>
+
+            <div class="price">$1,200/mo</div>
+
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>2 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>2 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>1,100 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+
+          <div class="property-info">
+            <span class="property-type">House Rental</span>
+            <h3 class="property-title">City View Apartment</h3>
+
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Downtown, Colombo</span>
+            </div>
+
+            <div class="price">$1,200/mo</div>
+
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>2 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>2 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>1,100 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+
+          <div class="property-info">
+            <span class="property-type">House Rental</span>
+            <h3 class="property-title">City View Apartment</h3>
+
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Downtown, Colombo</span>
+            </div>
+
+            <div class="price">$1,200/mo</div>
+
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>2 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>2 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>1,100 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= SALE SECTION ================= -->
+      <h3 id="sale" class="sub-heading">Properties for Sale</h3>
+      <div class="properties-grid mobile-scroll-row">
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+          <div class="property-info">
+            <span class="property-type">House & Land Sale</span>
+            <h3 class="property-title">Modern Luxury Villa</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Malabe</span>
+            </div>
+            <div class="price">$350,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>4 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>3 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>2,300 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+          <div class="property-info">
+            <span class="property-type">Land Sale</span>
+            <h3 class="property-title">Beachfront Plot</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Negombo Coast</span>
+            </div>
+            <div class="price">$500,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-expand"></i><span>3 Acres</span></div>
+              <div class="feature"><i class="fas fa-water"></i><span>Sea View</span></div>
+              <div class="feature"><i class="fas fa-road"></i><span>Road Access</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+          <div class="property-info">
+            <span class="property-type">Luxury House</span>
+            <h3 class="property-title">Hilltop Mansion</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kandy</span>
+            </div>
+            <div class="price">$750,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>5 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>4 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>3,500 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= COMPARE SECTION ================= -->
+      <h3 id="compare" class="sub-heading">Compare Popular Choices</h3>
+      <div class="properties-grid mobile-scroll-row">
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+          <div class="property-info">
+            <span class="property-type">Apartment</span>
+            <h3 class="property-title">City Budget Flat</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Colombo 06</span>
+            </div>
+            <div class="price">$120,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>2 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>1 Bath</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>800 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+          <div class="property-info">
+            <span class="property-type">Suburban House</span>
+            <h3 class="property-title">Family Comfort Home</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Homagama</span>
+            </div>
+            <div class="price">$210,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>3 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>2 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>1,900 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img">
+            <img src="img/r1.jpg" alt="City View Apartment">
+          </div>
+          <div class="property-info">
+            <span class="property-type">Luxury Apartment</span>
+            <h3 class="property-title">Skyline Tower Suite</h3>
+            <div class="property-address">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Colombo 03</span>
+            </div>
+            <div class="price">$400,000</div>
+            <div class="property-features">
+              <div class="feature"><i class="fas fa-bed"></i><span>3 Beds</span></div>
+              <div class="feature"><i class="fas fa-bath"></i><span>2 Baths</span></div>
+              <div class="feature"><i class="fas fa-vector-square"></i><span>1,600 sqft</span></div>
+            </div>
+
+            <!-- PROPERTY BUTTON -->
+            <a href="rental.html" class="property-btn" target="_blank" rel="noopener">
+              View Details</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Features Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mb-2 slide-in">Why Choose LPN Lanka</h2>
+        <p class="text-gray-600 mb-16 max-w-2xl mx-auto slide-in delay-1">We are committed to providing
+          exceptional service and finding the perfect property for our clients.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h3>Premium Properties</h3>
+          <p>We carefully select only the highest quality properties that meet our strict standards for
+            luxury
+            and value.</p>
+        </div>
+
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <h3>Competitive Prices</h3>
+          <p>Our negotiation expertise ensures you get the best possible deal on your
+            land or house purchase.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Expert Support</h3>
+          <p>Our team of real estate professionals provides personalized guidance
+            throughout the entire buying process.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3>Prime Locations</h3>
+          <p>We focus on properties in sought-after neighborhoods with excellent
+            investment potential and quality of life.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-file-signature"></i>
+          </div>
+          <h3>Easy Paperwork</h3>
+          <p>We handle all the complex documentation and legal requirements to make your
+            property purchase smooth and hassle-free.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Secure Transactions</h3>
+          <p>Your investment is protected with our secure payment systems and
+            transparent transaction process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">1200+</div>
+        <div class="stat-label">Properties Sold</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">95%</div>
+        <div class="stat-label">Customer Satisfaction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Expert Agents</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="slide-in">
+          <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+          <p class="text-gray-600 mb-8">Have questions about a property or need advice? Our team is ready
+            to
+            help you find your dream property.</p>
+
+          <form>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+              <input type="text"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="John Doe" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+              <input type="email"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="john@example.com" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+              <input type="tel"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="+1 (555) 123-4567" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+              <textarea rows="4"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Tell us what you're looking for..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full">Send Message</button>
+          </form>
+        </div>
+
+        <div class="slide-in delay-2">
+          <div class="h-64 md:h-full rounded-xl overflow-hidden">
+            <iframe class="w-full h-full"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.305935303!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1623765341575!5m2!1sen!2s"
+              style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>LPN Lanka</h3>
+          <p>Revolutionizing real estate through technology and exceptional service. Your trusted partner
+            in
+            property transactions.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#featured">Properties</a></li>
+            <li><a href="#visualization">3D Tours</a></li>
+            <li><a href="#stats">Market Insights</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Property Types</h3>
+          <ul class="footer-links">
+            <li><a href="#">Residential Houses</a></li>
+            <li><a href="#">Apartments & Condos</a></li>
+            <li><a href="#">Land & Plots</a></li>
+            <li><a href="#">Commercial Properties</a></li>
+            <li><a href="#">Luxury Villas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, NY 10001</li>
+            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            <li><i class="fas fa-envelope"></i> info@nexusproperties.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Nexus Properties. All rights reserved. | Designed with <i class="fas fa-heart"
+            style="color: #00d4aa;"></i> for modern real estate.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Post Property Modal -->
+  <div id="postPropertyModal" class="modal-overlay">
+    <div class="modal-content glass-effect">
+      <button class="close-modal" onclick="closePostModal()">&times;</button>
+      <div class="modal-header">
+        <h2>Post Your Property</h2>
+        <p>Fill in your details and we'll contact you for more info.</p>
+      </div>
+      <form id="postPropertyForm" class="modal-form">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" placeholder="e.g. +94 7X XXX XXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email (Optional)</label>
+            <input type="email" id="email" placeholder="yourname@gmail.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="propertyLoc">Property Location</label>
+          <input type="text" id="propertyLoc" placeholder="City or District" required>
+        </div>
+        <div class="form-group">
+          <label for="propertyType">Property Type</label>
+          <select id="propertyType" required>
+            <option value="">Select Type</option>
+            <option value="house">House</option>
+            <option value="land">Land</option>
+            <option value="commercial">Commercial</option>
+            <option value="rental">Rental</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Short Description</label>
+          <textarea id="description" rows="3" placeholder="Tell us a bit about the property..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Details</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="header.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPN Lanka | Premium Land & Houses</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylemac.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-top">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="site-name">
+                        <span class="brand-name">LPN Lanka Nexus</span>
+                        <span class="tagline">Find • Buy • Sell Properties in Sri Lanka</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-section">
+                <div class="phone-number">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+94 71 123 4567</span>
+                </div>
+                <a href="https://wa.me/94711234567" class="whatsapp-top" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp Now</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-inner">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="indexmac.html" class="logo-link">
+                        <img src="img/logo.png" alt="LPN Lanka" class="logo">
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <a href="indexmac.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="#" class="nav-link">Testimonials</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="mobile-dropdown">
+                        <button class="btn-primary full" onclick="togglePropertyMenu(event)">
+                            View Properties ▾
+                        </button>
+                        <div id="propertyDropdown" class="dropdown-menu">
+                            <a href="rental.html" class="mobile-link">Rental</a>
+                            <a href="indexmac.html#sale" class="mobile-link">Sale</a>
+                            <a href="indexmac.html#compare" class="mobile-link">Compare</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="mobile-btn" onclick="toggleMainNav()">
+                    <svg id="menu-open-icon" class="icon" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-close-icon" class="icon hidden" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <nav class="main-nav">
+            <div class="container nav-wrapper">
+                <button class="main-nav-toggle" id="mainNavToggle" onclick="toggleMainNav()" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars" id="mainNavIcon"></i>
+                </button>
+                <a href="indexmac.html" class="nav-item home-btn"><i class="fa-solid fa-house"></i></a>
+                <a href="rental.html" class="nav-item">Rental</a>
+                <span class="nav-separator">|</span>
+                <a href="indexmac.html#sale" class="nav-item">Sales</a>
+                <span class="nav-separator">|</span>
+                <a href="services.html#construction" class="nav-item">Construction</a>
+                <div class="search-nav">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="main-nav-panel" id="mainNavPanel">
+                <div class="main-nav-panel-inner">
+                    <a href="indexmac.html" class="panel-nav-link">Home</a>
+                    <a href="about.html" class="panel-nav-link active">About</a>
+                    <a href="services.html" class="panel-nav-link">Services</a>
+                    <a href="#" class="panel-nav-link">Testimonials</a>
+                    <a href="contact.html" class="panel-nav-link">Contact</a>
+                    <div class="panel-dropdown">
+                        <button class="panel-view-btn" onclick="togglePropertyMenu(event)">
+                            <i class="fa-solid fa-building"></i> View Properties <i
+                                class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div id="panelPropertyDropdown" class="panel-dropdown-menu">
+                            <a href="rental.html"><i class="fa-solid fa-key"></i> Rental</a>
+                            <a href="indexmac.html#sale"><i class="fa-solid fa-tag"></i> Sale</a>
+                            <a href="indexmac.html#compare"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <header class="lux-hero">
+        <!-- Background Image Slider -->
+        <div class="lux-bg-slider">
+            <div class="lux-slide lux-s1"></div>
+            <div class="lux-slide lux-s2"></div>
+            <div class="lux-slide lux-s3"></div>
+        </div>
+
+        <!-- Dark Overlay -->
+        <div class="lux-hero-overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="lux-hero-content">
+            <p class="lux-hero-subtitle">Architecture & Real Estate</p>
+
+            <h1 class="lux-hero-title">
+                Refining the Art of <br>
+                Modern<span>Living</span>
+            </h1>
+
+            <p class="lux-hero-desc">
+                We bridge the gap between architectural dreams and structural reality.
+                Experience real estate representation redefined.
+            </p>
+
+            <div class="lux-hero-scroll">
+                <div class="lux-scroll-line"></div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- INTRO SECTION -->
+    <section class="lux-intro">
+        <div class="lux-intro-container">
+
+            <!-- Image Side -->
+            <div class="lux-intro-image-wrapper">
+                <div class="lux-intro-bg-shape"></div>
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                    alt="Office Interior" class="lux-intro-image">
+            </div>
+
+            <!-- Text Side -->
+            <div class="lux-intro-text">
+                <div class="lux-intro-tag">
+                    <span class="lux-line"></span>
+                    <span>Who We Are</span>
+                </div>
+
+                <h2 class="lux-intro-title">
+                    We Don't Just Find Homes, <br>
+                    We Curate <span>Lifestyles.</span>
+                </h2>
+
+                <p class="lux-intro-desc">
+                    Founded in 2010, LuxEstate has evolved from a boutique agency into a global powerhouse in luxury
+                    real estate.
+                </p>
+
+                <p class="lux-intro-desc">
+                    Our team of architects, brokers, and designers work in unison to identify properties that stand the
+                    test of time.
+                </p>
+
+                <div class="lux-intro-stats">
+                    <div class="lux-stat-box">
+                        <h3 class="lux-counter" data-target="15">0</h3>
+                        <p>Years Exp.</p>
+                    </div>
+                    <div class="lux-stat-box">
+                        <h3 class="lux-counter" data-target="850">0</h3>
+                        <p>Projects Done</p>
+                    </div>
+                    <div class="lux-stat-box">
+                        <h3 class="lux-counter" data-target="40">0</h3>
+                        <p>Awards Won</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--chairman section-->
+    <section class="chairman-section">
+        <div class="container">
+            <div class="glass-card">
+
+                <!-- Background Glow -->
+                <div class="bg-glow"></div>
+
+                <div class="chairman-grid">
+
+                    <!-- Image -->
+                    <div class="chairman-img-wrap">
+                        <div class="chairman-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80"
+                                alt="Chairman">
+                        </div>
+                        <div class="status-dot"></div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="chairman-content">
+                        <div class="quote-label">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <span>Chairman's Message</span>
+                        </div>
+
+                        <blockquote>
+                            "At Nova Estates, we don't just build structures; we build legacies. Our commitment to
+                            quality and sustainability is unwavering, ensuring that every brick laid today becomes a
+                            part of history tomorrow."
+                        </blockquote>
+
+                        <div class="chairman-info">
+                            <h4>Alexander Sterling</h4>
+                            <p>Chairman & CEO, Nova Estates</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Vission & mission Section -->
+    <section class="values-section">
+        <div class="values-overlay"></div>
+
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Values</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="values-grid">
+
+                <!-- Vision Card -->
+                <div class="value-card">
+                    <div class="icon-box vision">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <h3>Our Vision</h3>
+                    <p>
+                        To be the global benchmark in sustainable luxury real estate, creating environments that
+                        harmonize with nature while pushing the boundaries of modern living. We envision cities where
+                        every building breathes life into the community.
+                    </p>
+
+                    <div class="read-more vision-link">
+                        Read more <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="value-card">
+                    <div class="icon-box mission">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <h3>Our Mission</h3>
+                    <p>
+                        To deliver exceptional value to our stakeholders through integrity, innovation, and excellence.
+                        We are committed to developing properties that exceed expectations, utilizing cutting-edge
+                        technology and eco-friendly materials.
+                    </p>
+
+                    <div class="read-more mission-link">
+                        Read more <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- TEAM SECTION -->
+    <section class="teamx-section">
+        <div class="teamx-container">
+            <h2 class="teamx-title">Meet Our Team</h2>
+            <p class="teamx-subtitle">The experts behind your real estate success</p>
+
+            <div class="teamx-grid">
+
+                <div class="teamx-card">
+                    <div class="teamx-img">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400" alt="Team Member">
+                    </div>
+                    <div class="teamx-info">
+                        <h3 class="teamx-name">Michael Chen</h3>
+                        <p class="teamx-role">CEO & President</p>
+                        <p class="teamx-desc">15+ years of experience in luxury real estate development</p>
+                        <div class="teamx-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="teamx-card">
+                    <div class="teamx-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Team Member">
+                    </div>
+                    <div class="teamx-info">
+                        <h3 class="teamx-name">Sarah Johnson</h3>
+                        <p class="teamx-role">Head of Sales</p>
+                        <p class="teamx-desc">Expert in residential and commercial property sales</p>
+                        <div class="teamx-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="teamx-card">
+                    <div class="teamx-img">
+                        <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?w=400" alt="Team Member">
+                    </div>
+                    <div class="teamx-info">
+                        <h3 class="teamx-name">David Martinez</h3>
+                        <p class="teamx-role">Chief Architect</p>
+                        <p class="teamx-desc">Award-winning designer with modern aesthetic vision</p>
+                        <div class="teamx-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="teamx-card">
+                    <div class="teamx-img">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400" alt="Team Member">
+                    </div>
+                    <div class="teamx-info">
+                        <h3 class="teamx-name">Emma Wilson</h3>
+                        <p class="teamx-role">Marketing Director</p>
+                        <p class="teamx-desc">Digital marketing strategist and brand expert</p>
+                        <div class="teamx-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LPN Lanka</h3>
+                    <p>Revolutionizing real estate through technology and exceptional service. Your trusted partner
+                        in
+                        property transactions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Properties</a></li>
+                        <li><a href="#visualization">3D Tours</a></li>
+                        <li><a href="#stats">Market Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Property Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Houses</a></li>
+                        <li><a href="#">Apartments & Condos</a></li>
+                        <li><a href="#">Land & Plots</a></li>
+                        <li><a href="#">Commercial Properties</a></li>
+                        <li><a href="#">Luxury Villas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@nexusproperties.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nexus Properties. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #00d4aa;"></i> for modern real estate.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+    <script src="header.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const countUp = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => countUp(counter), 10);
+            } else {
+                counter.innerText = target + '+';
+            }
+        };
+
+        const counterObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    countUp(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

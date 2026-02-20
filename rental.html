@@ -1,0 +1,512 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals - LPN Lanka Nexus</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylemac.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="rental.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-top">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="site-name">
+                        <span class="brand-name">LPN Lanka Nexus</span>
+                        <span class="tagline">Find • Buy • Sell Properties in Sri Lanka</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-section">
+                <div class="phone-number">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+94 71 123 4567</span>
+                </div>
+                <a href="https://wa.me/94711234567" class="whatsapp-top" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp Now</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-inner">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="indexmac.html" class="logo-link">
+                        <img src="img/logo.png" alt="LPN Lanka" class="logo">
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <a href="indexmac.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="#" class="nav-link">Testimonials</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="mobile-dropdown">
+                        <button class="btn-primary full" onclick="togglePropertyMenu(event)">
+                            View Properties ▾
+                        </button>
+                        <div id="propertyDropdown" class="dropdown-menu">
+                            <a href="rental.html" class="mobile-link active">Rental</a>
+                            <a href="indexmac.html#sale" class="mobile-link">Sale</a>
+                            <a href="indexmac.html#compare" class="mobile-link">Compare</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="mobile-btn" onclick="toggleMainNav()">
+                    <svg id="menu-open-icon" class="icon" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-close-icon" class="icon hidden" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <nav class="main-nav">
+            <div class="container nav-wrapper">
+                <button class="main-nav-toggle" id="mainNavToggle" onclick="toggleMainNav()" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars" id="mainNavIcon"></i>
+                </button>
+                <a href="indexmac.html" class="nav-item home-btn"><i class="fa-solid fa-house"></i></a>
+                <a href="rental.html" class="nav-item active">Rental</a>
+                <span class="nav-separator">|</span>
+                <a href="indexmac.html#sale" class="nav-item">Sales</a>
+                <span class="nav-separator">|</span>
+                <a href="services.html#construction" class="nav-item">Construction</a>
+                <div class="search-nav">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="main-nav-panel" id="mainNavPanel">
+                <div class="main-nav-panel-inner">
+                    <a href="indexmac.html" class="panel-nav-link">Home</a>
+                    <a href="about.html" class="panel-nav-link">About</a>
+                    <a href="services.html" class="panel-nav-link">Services</a>
+                    <a href="#" class="panel-nav-link">Testimonials</a>
+                    <a href="contact.html" class="panel-nav-link">Contact</a>
+                    <div class="panel-dropdown">
+                        <button class="panel-view-btn" onclick="togglePropertyMenu(event)">
+                            <i class="fa-solid fa-building"></i> View Properties <i
+                                class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div id="panelPropertyDropdown" class="panel-dropdown-menu">
+                            <a href="rental.html" class="active"><i class="fa-solid fa-key"></i> Rental</a>
+                            <a href="indexmac.html#sale"><i class="fa-solid fa-tag"></i> Sale</a>
+                            <a href="indexmac.html#compare"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="services.html" class="mobile-link">Services</a>
+    <a href="#" class="mobile-link">Testimonials</a>
+    <a href="contact.html" class="mobile-link">Contact</a>
+
+    <div class="mobile-dropdown" style="display: none;">
+        <button class="btn-primary full" onclick="togglePropertyMenu(event, 'propertyDropdownMobile')">
+            View Properties ▾
+        </button>
+
+        <div id="propertyDropdownMobile" class="dropdown-menu">
+            <a href="#rental" class="mobile-link">Rental</a>
+            <a href="#sale" class="mobile-link">Sale</a>
+            <a href="#compare" class="mobile-link">Compare</a>
+        </div>
+    </div>
+    </div>
+
+    <!-- Rental Page Content -->
+    <main>
+        <!-- Rental Hero -->
+        <section class="rental-hero">
+            <div class="rental-hero-content">
+                <h1>Find Your Perfect Rental</h1>
+                <p>Explore our curated collection of premium apartments, houses, and villas.</p>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-section">
+            <div class="section-title">
+                <span>Featured Listings</span>
+                <h2>Available Rentals</h2>
+            </div>
+
+            <div class="filter-controls">
+                <select id="price-filter" class="price-filter">
+                    <option value="all">Price: All</option>
+                    <option value="0-1000">Under $1,000</option>
+                    <option value="1000-2500">$1,000 - $2,500</option>
+                    <option value="2500-5000">$2,500 - $5,000</option>
+                    <option value="5000-100000">$5,000+</option>
+                </select>
+
+                <select id="sort-dropdown" class="sort-dropdown">
+                    <option value="featured">Sort by: Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Listings -->
+        <section class="listings-section">
+            <div id="rental-grid" class="listings-grid">
+
+                <!-- Item 1 -->
+                <div class="rental-card" data-price="2800">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge featured">Featured</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Villa">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$2,800<span>/month</span></div>
+                        <h3 class="card-title">Luxury Villa with Pool</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Beverly Hills, CA</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 4 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 3 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 2,800 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="rental-card" data-price="1950">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge rent">For Rent</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Apartment">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$1,950<span>/month</span></div>
+                        <h3 class="card-title">Modern Downtown Apartment</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Manhattan, NY</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 2 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 2 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 1,200 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="rental-card" data-price="5500">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge premium">Premium</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80"
+                            alt="Penthouse">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$5,500<span>/month</span></div>
+                        <h3 class="card-title">Stunning Penthouse Suite</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Miami Beach, FL</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 3 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 3.5 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 3,200 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="rental-card" data-price="1650">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge new">New</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Home">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$1,650<span>/month</span></div>
+                        <h3 class="card-title">Charming Family Home</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Austin, TX</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 3 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 2 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 1,800 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="rental-card" data-price="3200">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge featured">Featured</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Villa">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$3,200<span>/month</span></div>
+                        <h3 class="card-title">Sunset Lake House</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Lake Tahoe, NV</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 4 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 3 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 2,500 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="rental-card" data-price="950">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge rent">For Rent</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Studio">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$950<span>/month</span></div>
+                        <h3 class="card-title">Cosy City Studio</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Seattle, WA</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 1 Bed</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 1 Bath</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 600 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="rental-card" data-price="4100">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge premium">Premium</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1512915922610-3964af059278?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Mansion">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$4,100<span>/month</span></div>
+                        <h3 class="card-title">Beverly Hills Mansion</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Beverly Hills, CA</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 5 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 4.5 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 4,000 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="rental-card" data-price="1200">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge new">New</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Loft">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$1,200<span>/month</span></div>
+                        <h3 class="card-title">Artistic Loft Space</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Brooklyn, NY</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 1 Bed</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 1 Bath</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 950 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="rental-card" data-price="2400">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge rent">For Rent</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="House">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$2,400<span>/month</span></div>
+                        <h3 class="card-title">Modern Suburban Home</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Portland, OR</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 3 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 2.5 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 2,100 sqft</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 10 -->
+                <div class="rental-card" data-price="1100">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge rent">For Rent</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Apartment">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$1,100<span>/month</span></div>
+                        <h3 class="card-title">Sunny 2-Bed Apartment</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> San Diego, CA</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 2 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 1 Bath</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 900 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 11 -->
+                <div class="rental-card" data-price="3500">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge featured">Featured</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="House">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$3,500<span>/month</span></div>
+                        <h3 class="card-title">Eco-Friendly Modern Home</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Denver, CO</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 3 Beds</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 2 Baths</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 2,400 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 12 -->
+                <div class="rental-card" data-price="800">
+                    <div class="card-image">
+                        <div class="card-tags">
+                            <span class="badge rent">For Rent</span>
+                        </div>
+                        <div class="card-heart"><i class="far fa-heart"></i></div>
+                        <img src="https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Cabin">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$800<span>/month</span></div>
+                        <h3 class="card-title">Rustic Mountain Cabin</h3>
+                        <div class="card-location"><i class="fas fa-map-marker-alt"></i> Aspen, CO</div>
+                        <div class="card-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 1 Bed</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 1 Bath</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 700 sqft</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="pagination" class="pagination-container">
+                <!-- Pagination Buttons will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LPN Lanka</h3>
+                    <p>Revolutionizing real estate through technology and exceptional service. Your trusted partner in
+                        property transactions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Properties</a></li>
+                        <li><a href="#visualization">3D Tours</a></li>
+                        <li><a href="#stats">Market Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Property Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Houses</a></li>
+                        <li><a href="#">Apartments & Condos</a></li>
+                        <li><a href="#">Land & Plots</a></li>
+                        <li><a href="#">Commercial Properties</a></li>
+                        <li><a href="#">Luxury Villas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@nexusproperties.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nexus Properties. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #00d4aa;"></i> for modern real estate.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+
+
+
+    <script src="header.js"></script>
+    <script src="rental.js"></script> <!-- Included the new rental script -->
+
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LPN Lanka Nexus</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylemac.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body class="con-body">
+
+
+
+    <header class="main-header">
+        <div class="container header-top">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="site-name">
+                        <span class="brand-name">LPN Lanka Nexus</span>
+                        <span class="tagline">Find • Buy • Sell Properties in Sri Lanka</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-section">
+                <div class="phone-number">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+94 71 123 4567</span>
+                </div>
+                <a href="https://wa.me/94711234567" class="whatsapp-top" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp Now</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-inner">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="indexmac.html" class="logo-link">
+                        <img src="img/logo.png" alt="LPN Lanka" class="logo">
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <a href="indexmac.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="#" class="nav-link">Testimonials</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                    <div class="mobile-dropdown">
+                        <button class="btn-primary full" onclick="togglePropertyMenu(event)">
+                            View Properties ▾
+                        </button>
+                        <div id="propertyDropdown" class="dropdown-menu">
+                            <a href="rental.html" class="mobile-link">Rental</a>
+                            <a href="indexmac.html#sale" class="mobile-link">Sale</a>
+                            <a href="indexmac.html#compare" class="mobile-link">Compare</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="mobile-btn" onclick="toggleMainNav()">
+                    <svg id="menu-open-icon" class="icon" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-close-icon" class="icon hidden" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <nav class="main-nav">
+            <div class="container nav-wrapper">
+                <button class="main-nav-toggle" id="mainNavToggle" onclick="toggleMainNav()" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars" id="mainNavIcon"></i>
+                </button>
+                <a href="indexmac.html" class="nav-item home-btn"><i class="fa-solid fa-house"></i></a>
+                <a href="rental.html" class="nav-item">Rental</a>
+                <span class="nav-separator">|</span>
+                <a href="indexmac.html#sale" class="nav-item">Sales</a>
+                <span class="nav-separator">|</span>
+                <a href="services.html#construction" class="nav-item">Construction</a>
+                <div class="search-nav">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="main-nav-panel" id="mainNavPanel">
+                <div class="main-nav-panel-inner">
+                    <a href="indexmac.html" class="panel-nav-link">Home</a>
+                    <a href="about.html" class="panel-nav-link">About</a>
+                    <a href="services.html" class="panel-nav-link">Services</a>
+                    <a href="#" class="panel-nav-link">Testimonials</a>
+                    <a href="contact.html" class="panel-nav-link active">Contact</a>
+                    <div class="panel-dropdown">
+                        <button class="panel-view-btn" onclick="togglePropertyMenu(event)">
+                            <i class="fa-solid fa-building"></i> View Properties <i
+                                class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div id="panelPropertyDropdown" class="panel-dropdown-menu">
+                            <a href="rental.html"><i class="fa-solid fa-key"></i> Rental</a>
+                            <a href="indexmac.html#sale"><i class="fa-solid fa-tag"></i> Sale</a>
+                            <a href="indexmac.html#compare"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu (Moved outside Nav) -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="services.html" class="mobile-link">Services</a>
+        <a href="#" class="mobile-link">Testimonials</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+
+        <div class="mobile-dropdown" style="display: none;">
+            <button class="btn-primary full" onclick="togglePropertyMenu(event, 'propertyDropdownMobile')">
+                View Properties ▾
+            </button>
+
+            <div id="propertyDropdownMobile" class="dropdown-menu">
+                <a href="#rental" class="mobile-link">Rental</a>
+                <a href="#sale" class="mobile-link">Sale</a>
+                <a href="#compare" class="mobile-link">Compare</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="con-wrapper">
+
+        <!-- LEFT SIDE -->
+        <div class="con-left">
+
+            <div class="con-card">
+                <h1 class="con-title">
+                    Let's Start a <span>Conversation</span>
+                </h1>
+
+                <p class="con-desc">
+                    Have a project in mind or need help with your digital
+                    transformation? Fill out the form and our team will
+                    get back to you within 24 hours.
+                </p>
+
+                <div class="con-info">
+                    <div class="con-info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <small>Email Us</small>
+                            <p>hello@nexusflow.com</p>
+                        </div>
+                    </div>
+
+                    <div class="con-info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <small>Call Us</small>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="con-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <small>Headquarters</small>
+                            <p>123 Innovation Drive, Tech City</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAP BOX -->
+            <div class="con-map">
+                <iframe src="https://www.google.com/maps?q=Colombo,Sri%20Lanka&output=embed" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+        <div class="con-right">
+
+            <div class="con-form-card">
+
+                <div class="con-form-header">
+                    <div>
+                        <h2>Send a Message</h2>
+                        <small>All fields are required.</small>
+                    </div>
+
+                    <div class="con-online">
+                        <span></span> Online
+                    </div>
+                </div>
+
+                <form class="con-form">
+
+                    <div class="con-grid">
+                        <div class="con-input">
+                            <input type="text" placeholder="Full Name">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="con-input">
+                            <input type="email" placeholder="Email Address">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+
+                    <div class="con-input">
+                        <input type="text" placeholder="Subject">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+
+                    <div class="con-input">
+                        <textarea placeholder="Your Message"></textarea>
+                        <i class="fa-solid fa-comment"></i>
+                    </div>
+
+                    <label class="con-check">
+                        <input type="checkbox">
+                        I agree to the processing of my personal data.
+                    </label>
+
+                    <button class="con-btn">
+                        Send Message
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LPN Lanka</h3>
+                    <p>Revolutionizing real estate through technology and exceptional service. Your trusted partner
+                        in
+                        property transactions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Properties</a></li>
+                        <li><a href="#visualization">3D Tours</a></li>
+                        <li><a href="#stats">Market Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Property Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Houses</a></li>
+                        <li><a href="#">Apartments & Condos</a></li>
+                        <li><a href="#">Land & Plots</a></li>
+                        <li><a href="#">Commercial Properties</a></li>
+                        <li><a href="#">Luxury Villas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@nexusproperties.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nexus Properties. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #00d4aa;"></i> for modern real estate.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- footer end -->
+
+
+
+    <script src="header.js"></script>
+</body>
+
+</html>

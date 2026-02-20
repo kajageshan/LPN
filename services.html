@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPN Lanka | Premium Land & Houses</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="stylemac.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-top">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="site-name">
+                        <span class="brand-name">LPN Lanka Nexus</span>
+                        <span class="tagline">Find • Buy • Sell Properties in Sri Lanka</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-section">
+                <div class="phone-number">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+94 71 123 4567</span>
+                </div>
+                <a href="https://wa.me/94711234567" class="whatsapp-top" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp Now</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-inner">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="indexmac.html" class="logo-link">
+                        <img src="img/logo.png" alt="LPN Lanka" class="logo">
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <a href="indexmac.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link active">Services</a>
+                    <a href="#" class="nav-link">Testimonials</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <div class="mobile-dropdown">
+                        <button class="btn-primary full" onclick="togglePropertyMenu(event)">
+                            View Properties ▾
+                        </button>
+                        <div id="propertyDropdown" class="dropdown-menu">
+                            <a href="rental.html" class="mobile-link">Rental</a>
+                            <a href="indexmac.html#sale" class="mobile-link">Sale</a>
+                            <a href="indexmac.html#compare" class="mobile-link">Compare</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="mobile-btn" onclick="toggleMainNav()">
+                    <svg id="menu-open-icon" class="icon" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-close-icon" class="icon hidden" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <nav class="main-nav">
+            <div class="container nav-wrapper">
+                <button class="main-nav-toggle" id="mainNavToggle" onclick="toggleMainNav()" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars" id="mainNavIcon"></i>
+                </button>
+                <a href="indexmac.html" class="nav-item home-btn"><i class="fa-solid fa-house"></i></a>
+                <a href="rental.html" class="nav-item">Rental</a>
+                <span class="nav-separator">|</span>
+                <a href="indexmac.html#sale" class="nav-item">Sales</a>
+                <span class="nav-separator">|</span>
+                <a href="services.html#construction" class="nav-item active">Construction</a>
+                <div class="search-nav">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            <div class="main-nav-panel" id="mainNavPanel">
+                <div class="main-nav-panel-inner">
+                    <a href="indexmac.html" class="panel-nav-link">Home</a>
+                    <a href="about.html" class="panel-nav-link">About</a>
+                    <a href="services.html" class="panel-nav-link active">Services</a>
+                    <a href="#" class="panel-nav-link">Testimonials</a>
+                    <a href="contact.html" class="panel-nav-link">Contact</a>
+                    <div class="panel-dropdown">
+                        <button class="panel-view-btn" onclick="togglePropertyMenu(event)">
+                            <i class="fa-solid fa-building"></i> View Properties <i
+                                class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div id="panelPropertyDropdown" class="panel-dropdown-menu">
+                            <a href="rental.html"><i class="fa-solid fa-key"></i> Rental</a>
+                            <a href="indexmac.html#sale"><i class="fa-solid fa-tag"></i> Sale</a>
+                            <a href="indexmac.html#compare"><i class="fa-solid fa-scale-balanced"></i> Compare</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="ser-hero">
+
+        <!-- Background Slider -->
+        <div class="ser-slider">
+            <div class="ser-slide ser-slide1"></div>
+            <div class="ser-slide ser-slide2"></div>
+            <div class="ser-slide ser-slide3"></div>
+        </div>
+
+        <!-- Dark Overlay -->
+        <div class="ser-overlay"></div>
+
+        <!-- Content -->
+        <div class="ser-content">
+            <h2 class="ser-title">
+                Complete <span>Real Estate & Construction</span> Solutions
+            </h2>
+            <p class="ser-description">
+                From buying and selling properties to full-scale construction and renovation, we provide end-to-end
+                solutions tailored to your needs. Our team combines market expertise, technical knowledge, and practical
+                experience to deliver results that are reliable, transparent, and value-driven.
+            </p>
+        </div>
+
+
+    </section>
+
+
+
+
+    <!--service section-->
+
+
+    <div class="re-container">
+        <!-- Main Services Container -->
+        <div class="re-services-wrapper">
+
+            <!-- Side Navigation -->
+            <div class="re-side-nav">
+                <h3>Service Categories</h3>
+
+                <div class="re-nav-item active" onclick="reShowService(event, 're-common')">
+                    <div class="re-nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="re-nav-text">
+                        <h4>Common</h4>
+                        <p>Core Services</p>
+                    </div>
+                </div>
+
+                <div class="re-nav-item" onclick="reShowService(event, 're-construction')">
+                    <div class="re-nav-icon">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <div class="re-nav-text">
+                        <h4>Construction</h4>
+                        <p>Build & Renovate</p>
+                    </div>
+                </div>
+
+                <div class="re-nav-item" onclick="reShowService(event, 're-legal')">
+                    <div class="re-nav-icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div class="re-nav-text">
+                        <h4>Legal</h4>
+                        <p>Documentation & Compliance</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="re-content-area">
+
+                <!-- Common Services -->
+                <div class="re-service-content active" id="re-common">
+                    <div class="re-content-header">
+                        <h2><span>🏘️</span> Common Services</h2>
+                        <p>Essential real estate solutions for all your property needs</p>
+                    </div>
+
+                    <div class="re-services-grid">
+                        <div class="re-service-card modern-card">
+                            <div class="re-card-icon">🏠</div>
+                            <h3>Buy & Sell</h3>
+                            <p>Navigate the property market with confidence.</p>
+                        </div>
+                        <div class="re-service-card modern-card">
+                            <div class="re-card-icon">📦</div>
+                            <h3>Property Management</h3>
+                            <p>Keep your properties managed efficiently and securely.</p>
+                        </div>
+                        <div class="re-service-card modern-card">
+                            <div class="re-card-icon">📊</div>
+                            <h3>Market Analysis</h3>
+                            <p>Get accurate insights to make informed decisions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Construction Services -->
+                <div class="re-service-content" id="re-construction">
+                    <div class="re-content-header">
+                        <h2><span>🏗️</span> Construction Services</h2>
+                        <p>Transform spaces with quality construction.</p>
+                    </div>
+                    <div class="re-services-grid">
+                        <div class="re-service-card modern-card">
+                            <div class="re-card-icon">🛠️</div>
+                            <h3>Residential</h3>
+                            <p>Build your dream home with our expert team.</p>
+                        </div>
+                        <div class="re-service-card modern-card">
+                            <div class="re-card-icon">🏢</div>
+                            <h3>Commercial</h3>
+                            <p>Reliable construction solutions for businesses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Services -->
+                <div class="re-service-content" id="re-legal">
+                    <div class="re-content-header">
+                        <h2><span>⚖️</span> Legal Services</h2>
+                        <p>Secure and compliant solutions.</p>
+                    </div>
+                    <div class="re-services-grid">
+                        <div class="re-service-card modern-card">
+                            <div class="re-card-icon">📄</div>
+                            <h3>Property Registration</h3>
+                            <p>Complete legal guidance for property ownership.</p>
+                        </div>
+                        <div class="re-service-card modern-card">
+                            <div class="re-card-icon">📝</div>
+                            <h3>Contract Review</h3>
+                            <p>Ensure your agreements are safe and transparent.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hero Section -->
+        <div class="re-hero">
+            <div class="re-hero-content">
+                <h1>Excellence in Real Estate</h1>
+                <p>Discover comprehensive solutions designed to transform your property dreams into reality</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>LPN Lanka</h3>
+                    <p>Revolutionizing real estate through technology and exceptional service. Your trusted partner
+                        in
+                        property transactions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Properties</a></li>
+                        <li><a href="#visualization">3D Tours</a></li>
+                        <li><a href="#stats">Market Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Property Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Houses</a></li>
+                        <li><a href="#">Apartments & Condos</a></li>
+                        <li><a href="#">Land & Plots</a></li>
+                        <li><a href="#">Commercial Properties</a></li>
+                        <li><a href="#">Luxury Villas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@nexusproperties.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nexus Properties. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: #00d4aa;"></i> for modern real estate.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/94771234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- footer end -->
+</body>
+<script src="header.js"></script>
+<script>
+    function reShowService(event, serviceId) {
+
+        // Hide all content
+        document.querySelectorAll('.re-service-content')
+            .forEach(content => content.classList.remove('active'));
+
+        // Show selected
+        document.getElementById(serviceId)
+            .classList.add('active');
+
+        // Update nav state
+        document.querySelectorAll('.re-nav-item')
+            .forEach(item => item.classList.remove('active'));
+
+        event.currentTarget.classList.add('active');
+
+        // Mobile scroll
+        if (window.innerWidth <= 1200) {
+            document.querySelector('.re-content-area')
+                .scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+
+</html>
